@@ -1,0 +1,27 @@
+function [x_AMP, x_parameterless_en_AMP, x_en_AMP, x_AMP_residual] = overlapped_decomp(theta_AMP, theta_parameterless_en_AMP, theta_en_AMP, theta_AMP_residual, Param)
+size_x = Param.size_x;
+M_size = Param.M_size;
+N_size = Param.N_size;
+blocknum = Param.blocknum;
+ids_vec = Param.ids_vec;
+x_AMP = zeros(size_x);
+x_en_AMP = zeros(size_x);
+x_parameterless_en_AMP = zeros(size_x);
+x_AMP_residual = zeros(size_x);
+for i = 1 : blocknum
+ids{1} = [ids_vec{i}(1):ids_vec{i}(1)+M_size-1];
+ids{2} = [ids_vec{i}(2):ids_vec{i}(2)+N_size-1];
+tmp_AMP = idct2(reshape(theta_AMP(:,i),blocksize));
+tmp_parameterless_en_AMP = idct2(reshape(theta_parameterless_en_AMP(:,i),blocksize));
+tmp_en_AMP = idct2(reshape(theta_en_AMP(:,i),blocksize));
+tmp_AMP_residual = idct2(reshape(theta_AMP_residual(:,i),blocksize));
+x_AMP(ids{1},ids{2}) = x_AMP(ids{1},ids{2})+tmp_AMP;
+x_en_AMP(ids{1},ids{2}) = x_en_AMP(ids{1},ids{2})+tmp_en_AMP;
+x_parameterless_en_AMP(ids{1},ids{2}) =x_parameterless_en_AMP(ids{1},ids{2})+tmp_parameterless_en_AMP;
+x_AMP_residual(ids{1},ids{2}) =x_AMP_residual(ids{1},ids{2})+tmp_AMP_residual;
+end
+cnt = countcover(size(x_mat),blocksize,stepsize);
+x_AMP = x_AMP./cnt;
+x_en_AMP = x_en_AMP./cnt;
+x_parameterless_en_AMP = x_parameterless_en_AMP./cnt;
+x_AMP_residual = x_AMP_residual./cnt;
