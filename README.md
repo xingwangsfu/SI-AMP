@@ -4,6 +4,7 @@ SI-AMP algorithm
 The code implements the proposed algorithm GENP-AMP in the paper “Approximate Message Passing-based Compressed Sensing Reconstruction with Generalized Elastic Net Prior” (http://arxiv.org/abs/1311.0576) and reproduces the experimental parts.
 
 Requirements
+
 1.	Mathworks MATLAB release 2009b or later
 
 2.	The CVX software package, (available at http://cvxr.com/cvx/ )
@@ -13,6 +14,7 @@ Requirements
 All related software packages are included in the document. If the readers want to get the latest version, please download from the webpages above.
 
 Installation instructions:
+
 1.	Install the CVX package from http://web.cvxr.com/cvx/doc/  and include the folders in MATLAB’s path.
 
 2.	Install the GAMP software packages from http://sourceforge.net/projects/gampmatlab/files/  and include the folders in MATLAB’s path
@@ -22,6 +24,7 @@ Installation instructions:
 
 
 How to use SI-OWLQN:
+
 Save the data into .mtx format ,e.g., 
 [ err1 ] = mmwrite( 'A_matrix.mtx',A); % %
 
