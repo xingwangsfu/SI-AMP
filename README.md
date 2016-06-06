@@ -41,9 +41,10 @@ How to use SI-OWLQN:
 
   * cd to comparison algorithms\SI-OWLQN
 
-  * The input format should be like this: SI-OWLQN  x_matrix.mtx  A_matrix.mtx  y_matrix.mtx  SI_matrix.mtx  lambda  output.mtx  –l2weight  tau
+  * The input format should be like this: 
   
-    Then mmread function is applied to read output.mtx into matlab and the MSE can be calculated.
+    SI-OWLQN  x_matrix.mtx  A_matrix.mtx  y_matrix.mtx  SI_matrix.mtx  lambda  output.mtx  –l2weight  tau
+  
 
 
 
