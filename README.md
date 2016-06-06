@@ -1,31 +1,34 @@
 # SI-AMP
 SI-AMP algorithm
 
+## Introduction
 The code implements the proposed algorithm GENP-AMP in the paper “Approximate Message Passing-based Compressed Sensing Reconstruction with Generalized Elastic Net Prior” (http://arxiv.org/abs/1311.0576) and reproduces the experimental parts.
 
-Requirements
+## Requirements
 
-1.	Mathworks MATLAB release 2009b or later
+  1.	Mathworks MATLAB release 2009b or later
 
-2.	The CVX software package, (available at http://cvxr.com/cvx/ )
+  2.	The CVX software package, (available at http://cvxr.com/cvx/ )
 
-3.	The GAMP software package, (available from from Sourceforge at http://sourceforge.net/projects/gampmatlab/files/), installed and included in MATLAB's path.
+  3.	The GAMP software package, (available from from Sourceforge at http://sourceforge.net/projects/gampmatlab/files/), installed and included in MATLAB's path.
 
-All related software packages are included in the document. If the readers want to get the latest version, please download from the webpages above.
-
-Installation instructions:
-
-1.	Install the CVX package from http://web.cvxr.com/cvx/doc/  and include the folders in MATLAB’s path.
-
-2.	Install the GAMP software packages from http://sourceforge.net/projects/gampmatlab/files/  and include the folders in MATLAB’s path
-
-3.	The multi-view dataset can be downloaded from http://www.fujii.nuee.nagoya-u.ac.jp/multiview-data/ .
+  All related software packages are included in the document. If the readers want to get the latest version, please download from the webpages above.
 
 
+## Installation instructions:
+
+  1.	Install the CVX package from http://web.cvxr.com/cvx/doc/  and include the folders in MATLAB’s path.
+
+  2.	Install the GAMP software packages from http://sourceforge.net/projects/gampmatlab/files/  and include the folders in MATLAB’s path
+
+  3.	The multi-view dataset can be downloaded from http://www.fujii.nuee.nagoya-u.ac.jp/multiview-data/ .
+
+## Usage
 
 How to use SI-OWLQN:
 
 Save the data into .mtx format ,e.g., 
+
 [ err1 ] = mmwrite( 'A_matrix.mtx',A); % %
 
 [ err2 ] = mmwrite( 'y_matrix.mtx',Y); %
