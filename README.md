@@ -27,25 +27,25 @@ The code implements the proposed algorithm GENP-AMP in the paper “Approximate 
 
 How to use SI-OWLQN:
 
-Save the data into .mtx format ,e.g., 
+  * Save the data into .mtx format ,e.g., 
 
-[ err1 ] = mmwrite( 'A_matrix.mtx',A); % %
+    [ err1 ] = mmwrite( 'A_matrix.mtx',A); % %
 
-[ err2 ] = mmwrite( 'y_matrix.mtx',Y); %
+    [ err2 ] = mmwrite( 'y_matrix.mtx',Y); %
 
-[ err3 ] = mmwrite( 'SI_matrix.mtx',x_SI); %
+    [ err3 ] = mmwrite( 'SI_matrix.mtx',x_SI); %
 
-[ err4 ] = mmwrite('x_matrix.mtx',x);
+    [ err4 ] = mmwrite('x_matrix.mtx',x);
 
-The mmwrite and mmread programme have been included in sub-folder "solver".
+    The mmwrite and mmread programme have been included in sub-folder "solver".
 
-cd to comparison algorithms\SI-OWLQN
+  * cd to comparison algorithms\SI-OWLQN
 
-The input format should be like this:
+  * The input format should be like this:
 
-SI-OWLQN  x_matrix.mtx  A_matrix.mtx  y_matrix.mtx  SI_matrix.mtx  lambda  output.mtx  –l2weight  tau
+    SI-OWLQN  x_matrix.mtx  A_matrix.mtx  y_matrix.mtx  SI_matrix.mtx  lambda  output.mtx  –l2weight  tau
 
-Then mmread function is applied to read output.mtx into matlab and the MSE can be calculated.
+    Then mmread function is applied to read output.mtx into matlab and the MSE can be calculated.
 
 
 
